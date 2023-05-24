@@ -34,6 +34,8 @@ drone.on('open', error => {
   });
 });
 
-room.on('data', (text, member) => {
-  botRespond(text)
-});
+while (2==2) {
+  room.on('data', (text, member) => {
+    botRespond(text)
+  });
+}
