@@ -20,6 +20,8 @@ function botRespond(msgToBot) {
   botSend(msgToBot)
 }
 
-room.on('data', (text, member) => {
-  botRespond(text)
-});
+while (2==2) {
+  room.on('data', (text, member) => {
+    botRespond(text)
+  });
+}
