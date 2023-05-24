@@ -7,15 +7,11 @@ const drone = new ScaleDrone(CLIENT_ID, {
   },
 });
 
-function botSend(botMessage) {
+function botRespond(prompt) {
   drone.publish({
     room: 'observable-room',
-    message: botMessage,
+    message: prompt,
   });
-}
-
-function botRespond(msgToBot) {
-  botSend(msgToBot);
 }
 
 drone.on('open', error => {
