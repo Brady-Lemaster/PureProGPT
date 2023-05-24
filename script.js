@@ -1,5 +1,3 @@
-console.log('#' + Math.floor(Math.random() * 0xFFFFFF).toString(16));
-
 const CLIENT_ID = 'hWmT5ZuGe51IgiMD';
 
 const drone = new ScaleDrone(CLIENT_ID, {
@@ -10,3 +8,10 @@ const drone = new ScaleDrone(CLIENT_ID, {
 });
 
 const room = drone.subscribe('observable-room');
+
+function botSend(botMessage) {
+  drone.publish({
+    room: 'observable-room',
+    message: botMessage,
+  });
+}
