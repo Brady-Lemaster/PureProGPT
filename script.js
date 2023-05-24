@@ -7,8 +7,6 @@ const drone = new ScaleDrone(CLIENT_ID, {
   },
 });
 
-const room = drone.subscribe('observable-room');
-
 function botSend(botMessage) {
   drone.publish({
     room: 'observable-room',
@@ -20,8 +18,22 @@ function botRespond(msgToBot) {
   botSend(msgToBot)
 }
 
-while (2==2) {
+drone.on('open', error => {
+  if (error) {
+    return console.error(error);
+  }
+  console.log('Successfully connected to Scaledrone');
+
+  const room = drone.subscribe('observable-room');
+  
+  room.on('open', error => {
+    if (error) {
+      return console.error(error);
+    }
+    console.log('Successfully joined room');
+  });
+  
   room.on('data', (text, member) => {
     botRespond(text)
   });
-}
+});
