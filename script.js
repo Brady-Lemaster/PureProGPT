@@ -32,6 +32,7 @@ drone.on('open', error => {
     }
     console.log('Successfully joined room');
   });
+  
   room.on('data', (text, member) => {
     botRespond(text);
   });
