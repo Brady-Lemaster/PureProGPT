@@ -21,7 +21,5 @@ function botRespond(msgToBot) {
 }
 
 room.on('data', (text, member) => {
-  if (member) {
-    botRespond(text)
-  }
+  botRespond(text)
 });
