@@ -30,6 +30,8 @@ drone.on('open', error => {
   });
   
   room.on('data', (text, member) => {
-    botRespond(text);
+    if (!member=="PureProGPT") {
+      botRespond(text);
+    }
   });
 });
