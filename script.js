@@ -32,10 +32,7 @@ drone.on('open', error => {
     }
     console.log('Successfully joined room');
   });
-});
-
-while (2==2) {
   room.on('data', (text, member) => {
     botRespond(text)
   });
-}
+});
