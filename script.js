@@ -2,8 +2,8 @@ const CLIENT_ID = 'hWmT5ZuGe51IgiMD';
 
 const drone = new ScaleDrone(CLIENT_ID, {
   data: {
-    name: 'PureProGPT Testing',
-    color: '#00FF00',
+    name: 'PureProGPT',
+    color: '#AFEDCB',
   },
 });
 
