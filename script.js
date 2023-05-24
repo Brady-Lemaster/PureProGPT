@@ -15,3 +15,13 @@ function botSend(botMessage) {
     message: botMessage,
   });
 }
+
+function botRespond(msgToBot) {
+  botSend(msgToBot)
+}
+
+room.on('data', (text, member) => {
+  if (member) {
+    botRespond(text)
+  }
+});
