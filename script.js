@@ -13,10 +13,9 @@ function botRespond(prompt) {
 }
 drone.on('open', error => {
   const room = drone.subscribe('observable-room');
-  room.on('message', function(message) => {
-    let member = message.member;
+  room.on('data', (text, member) => {
     if (member == 'PureProGPT') {}else{
-      botRespond(message);
+      botRespond(text);
     }
   });
 });
