@@ -5,17 +5,12 @@ const drone = new ScaleDrone(CLIENT_ID, {
     color: '#AFEDCB',
   },
 });
-function botRespond(prompt) {
-  drone.publish({
-    room: 'observable-room',
-    message: prompt,
-  });
-}
 drone.on('open', error => {
   const room = drone.subscribe('observable-room');
   room.on('data', (text, member) => {
-    if (member == 'PureProGPT') {}else{
-      botRespond(text);
-    }
+    drone.publish({
+    room: 'observable-room',
+    message: prompt,
+  });
   });
 });
